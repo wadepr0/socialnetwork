@@ -1,0 +1,21 @@
+.item {
+    color: blue;
+    border-radius: 50%;
+}
+
+// .item img {
+    
+//     //clip-path: circle(60px at center);
+// }
+
+.avatar {
+
+    border-radius: 50%;
+
+    img {
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;  
+    }
+}
+

@@ -1,0 +1,54 @@
+.header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background: rgb(46, 46, 46);
+    background: -moz-linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(46, 46, 46, 1) 46%, rgba(0, 0, 0, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(46, 46, 46, 1) 46%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(46, 46, 46, 1) 46%, rgba(0, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2e2e2e", endColorstr="#000000", GradientType=1);
+}
+
+
+.header .logo {
+    font-family: 'Gaoel';
+    font-size: 32px;
+    color: rgb(0, 204, 255);
+    animation: colorization 12s linear infinite;
+
+    span {
+        color: rgb(0, 255, 55);
+    }
+}
+
+.header img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorization {
+    0% {
+        color: rgb(0, 204, 255);
+    }
+
+    50% {
+        color: rgb(0, 183, 255);
+    }
+
+    100% {
+        color: rgb(0, 204, 255);
+    }
+}
