@@ -1,13 +1,16 @@
 import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import classes from './Profile.module.scss';
 
-function Profile() {
+function Profile(props) {
     return (
-        <main className={classes.main}>
-            <img src="/images/cropped.png" alt="" />
-            <div>avatar + description</div>
-            <MyPosts />
+        <main>
+            {/* <img src="/images/cropped.png" alt="" /> */}
+            <div className={classes.profile_wrapper}>
+                <ProfileInfo src="https://joediliberto.files.wordpress.com/2011/01/fight-club02.jpg"/>
+                <MyPosts posts={props.state.posts}/>
+            </div>
         </main>
     );
 }

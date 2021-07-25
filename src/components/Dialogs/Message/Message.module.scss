@@ -1,0 +1,17 @@
+.message {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: end;
+    border: 1px solid rgba(80, 214, 255, 0.849);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(200, 241, 253);
+}
+
+.message:nth-child(odd) {
+    margin-right: auto;
+    justify-content: start;
+    background-color: rgb(200, 253, 227);
+}
+

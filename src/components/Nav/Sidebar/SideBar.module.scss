@@ -1,0 +1,15 @@
+.friendsOnline {
+    padding: 5px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: auto;
+    max-height: 325px;
+    border: 1px solid rgba(80, 214, 255, 0.849);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+

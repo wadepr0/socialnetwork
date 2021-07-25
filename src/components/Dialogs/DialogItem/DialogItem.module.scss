@@ -1,0 +1,21 @@
+.dialog {
+    text-decoration: none;
+    border: 1px solid rgba(80, 214, 255, 0.849);
+    font-family: 'Roboto', sans-serif;
+    color: rgb(184, 233, 255);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    img {
+        width: 60px;
+        height: 80px;
+        margin-right: 10px;
+        border: 1px solid #000;
+    }
+}
+
+.active {
+    background-color: rgba(80, 214, 255, 0.849);
+    color: white;
+}
