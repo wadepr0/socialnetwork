@@ -10,17 +10,17 @@ import { Route } from "react-router-dom";
 
 function App(props) {
   return (
-      <div className="app-wrapper">
-        <Header />
-        <Nav state={props.state.navPage}/>
-        <div className="app-wrapper-content">
-          <Route path="/profile" render={() => <Profile state={props.state.profilePage} />} />
-          <Route path="/dialogs" render={() => <Dialogs state={props.state.dialogsPage} />} />
-          <Route path="/photos" render={() => <Photos />} />
-          <Route path="/music" render={() => <Music />} />
-          <Route path="/settings" render={() => <Settings />} />
-        </div>
+    <div className="app-wrapper">
+      <Header />
+      <Nav />
+      <div className="app-wrapper-content">
+        <Route path="/profile" render={() => <Profile />} />
+        <Route path="/dialogs" render={() => <Dialogs />} />
+        <Route path="/photos" render={() => <Photos />} />
+        <Route path="/music" render={() => <Music />} />
+        <Route path="/settings" render={() => <Settings />} />
       </div>
+    </div>
   );
 }
 

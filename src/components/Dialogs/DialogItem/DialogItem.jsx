@@ -7,7 +7,7 @@ function DialogItem(props) {
     return (
         <NavLink to={path} activeClassName={classes.active} className={classes.dialog}>
             <img src={props.avatar} alt="" />
-            {props.name}
+            <p>{props.name}</p>
         </NavLink>
     )
 }

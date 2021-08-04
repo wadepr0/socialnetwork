@@ -13,7 +13,7 @@ function Nav(props) {
                 <li className={classes.item}><NavLink activeClassName={classes.active} className={`${classes.link} ${'fa-music'}`} to='/music'></NavLink></li>
                 <li className={classes.item}><NavLink activeClassName={classes.active} className={`${classes.link} ${'fa-cog'}`} to='/settings'></NavLink></li>
             </ul>
-            <SideBar friendsOnline={props.state.friends}/>
+            <SideBar />
         </nav>
     );
 }

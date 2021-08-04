@@ -1,12 +1,18 @@
 .dialog {
     text-decoration: none;
-    border: 1px solid rgba(80, 214, 255, 0.849);
+    border-bottom: 1px solid rgba(80, 214, 255, 0.849);
     font-family: 'Roboto', sans-serif;
     color: rgb(184, 233, 255);
     font-size: 24px;
     display: flex;
     align-items: center;
     padding-right: 10px;
+
+    p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
     img {
         width: 60px;
         height: 80px;
