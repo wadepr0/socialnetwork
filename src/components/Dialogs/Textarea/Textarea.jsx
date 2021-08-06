@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Textarea.module.scss';
 
 function Textarea(props) {
+    debugger
     let newMessage = React.createRef();
 
     let addMessage = () => {

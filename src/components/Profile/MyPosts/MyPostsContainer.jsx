@@ -7,6 +7,7 @@ function MyPostsContainer(props) {
     return (
         <StoreContext.Consumer>
             {(store) => {
+
                 let state = store.getState();
 
                 let addPost = () => {
