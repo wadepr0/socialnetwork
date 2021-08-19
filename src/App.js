@@ -7,6 +7,7 @@ import Photos from "./components/Photos/Photos";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { Route } from "react-router-dom";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 function App(props) {
@@ -16,6 +17,7 @@ function App(props) {
       <Nav />
       <div className="app-wrapper-content">
         <Route path="/profile" render={() => <Profile />} />
+        <Route path="/users" render={() => <UsersContainer />} />
         <Route path="/dialogs" render={() => <DialogsContainer />} />
         <Route path="/photos" render={() => <Photos />} />
         <Route path="/music" render={() => <Music />} />

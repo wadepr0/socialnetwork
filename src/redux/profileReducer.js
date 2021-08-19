@@ -102,12 +102,18 @@ const profileReducer = (state = initialState, action) => {
           ":" +
           showMinutes,
       };
-      state.posts.unshift(newPost);
-      state.newPost = "";
-      return state;
+      return {
+        ...state,
+        posts: [newPost, ...state.posts],
+        newPost: ''
+      };
+
     case UPDATE_NEW_POST_TEXT:
-      state.newPost = action.newText;
-      return state;
+      return {
+        ...state,
+        newPost: action.newText
+      };
+
     default:
       return state;
   }

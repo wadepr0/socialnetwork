@@ -1,0 +1,105 @@
+.wrap {
+    margin: 10px auto;
+    border: 1px solid rgba(80, 214, 255, 0.849);
+    width: 1080px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    background: rgb(20, 20, 20);
+    background: linear-gradient(90deg, rgba(20, 20, 20, 1) 0%, rgba(21, 50, 85, 1) 27%, rgba(34, 65, 105, 1) 59%, rgba(0, 0, 0, 1) 100%);
+}
+
+.status {
+    position: absolute;
+    left: 110px;
+    bottom: 10px;
+    color: #b8e9ffa4;
+    font-size: 22px;
+}
+
+.avatar {
+    width: 100px;
+    height: 140px;
+    border: 2px solid #000;
+    border-right: 1px solid rgba(80, 214, 255, 0.849);
+}
+
+.userName {
+    color: #b8e9ff;
+    font-size: 28px;
+}
+
+.location {
+    color: #b8e9ff;
+    font-size: 22px;
+}
+
+.info {
+    display: flex;
+}
+
+.nameLocation {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.followButton {
+    width: 130px;
+    border-radius: 10px;
+    outline: none;
+    border: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    text-align: center;
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    color: #b8e9ff;
+    padding: 5px 20px;
+    border: 2px solid #b8e9ff52;
+
+}
+
+.followButton:hover {
+    background-color: rgb(0, 174, 243);
+    transition-duration: 1s;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.greenButton {
+
+    color: #000 !important;
+    background-color: rgb(20, 255, 20) !important;
+    transition-duration: 1s !important;
+    transition: 1s;
+}
+
+.infoWrapper {
+    display: flex;
+    width: 100%;
+}
+
+.pages {
+    display: flex;
+    flex-wrap: wrap;
+
+    span {
+        font-family: 'Roboto', sans-serif;
+        color: rgba(80, 214, 255, 0.849);
+        font-size: 22px;
+        padding-left: 5px;
+        cursor: pointer;
+    }
+
+    .currentPage {
+        color: rgb(255, 255, 255);
+    }
+}

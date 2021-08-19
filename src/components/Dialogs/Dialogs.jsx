@@ -6,9 +6,9 @@ import Textarea from './Textarea/Textarea';
 
 function Dialogs(props) {
 
-    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name} avatar={dialog.avatar} />)
+    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name} avatar={dialog.avatar} key={dialog.id}/>)
 
-    let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message} />)
+    let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message} key={message.id}/>)
 
     let onMessageChange = (text) => {
         props.updateNewMessage(text)
