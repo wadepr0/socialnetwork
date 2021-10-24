@@ -1,0 +1,19 @@
+.status {
+    border: 1px solid rgba(80, 214, 255, 0.849);
+    margin-bottom: 5px;
+    color: #b8e9ff;
+    font-size: 18px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(180deg, #2e2e2e 0%, #2e2e2e 0%, #001840 100%);
+    max-width: 347px;
+    font-style: italic;
+
+    span {
+        cursor: pointer;
+    }
+
+    input {
+        width: 100%;
+    }
+}

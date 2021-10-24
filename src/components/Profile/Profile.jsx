@@ -8,7 +8,7 @@ function Profile(props) {
         <main>
             {/* <img src="/images/cropped.png" alt="" /> */}
             <div className={classes.profile_wrapper}>
-                <ProfileInfo src="https://joediliberto.files.wordpress.com/2011/01/fight-club02.jpg" />
+                <ProfileInfo src="https://joediliberto.files.wordpress.com/2011/01/fight-club02.jpg" profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
                 <MyPostsContainer />
             </div>
         </main>

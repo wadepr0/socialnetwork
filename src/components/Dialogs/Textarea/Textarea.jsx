@@ -1,26 +1,28 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { maxLengthCreator, requiredField } from '../../../utils/validators/validators';
+import { Textarea } from '../../common/FormsControls/FormsControl';
 import classes from './Textarea.module.scss';
 
-function Textarea(props) {
-    let newMessage = React.createRef();
+const maxLength100 = maxLengthCreator(100)
 
-    let addMessage = () => {
-        props.addMessage()
-    }
 
-    let onMessageChange = () => {
-        let text = newMessage.current.value;
-        props.updateNewMessage(text)
-    }
+function TextareaComponent(props) {
     return (
-        <div className={classes.textarea_wrapper}>
-            <textarea ref={newMessage} onChange={onMessageChange} value={props.newMessage} />
-            <div className={classes.buttons}>
-                <button className={classes.button}>+</button>
-                <button onClick={addMessage} className={classes.submit}>Send Message</button>
-            </div>
-        </div>
+        <AddMessageFormRedux onSubmit={props.addMessage} />
     );
 }
 
-export default Textarea;
+const AddMessageForm = (props) => {
+    return (<form onSubmit={props.handleSubmit} className={classes.textarea_wrapper}>
+        <Field component={Textarea} name={"newMessageBody"} placeholder={"enter your message"} validate={[requiredField, maxLength100]} />
+        <div className={classes.buttons}>
+            <button className={classes.button}>+</button>
+            <button className={classes.submit}>Send Message</button>
+        </div>
+    </form>)
+}
+
+const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(AddMessageForm)
+
+export default TextareaComponent;

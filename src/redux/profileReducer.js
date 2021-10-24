@@ -1,5 +1,12 @@
+import {
+  getUserProfile,
+  getUserStatus,
+  updateUserStatus,
+} from "../components/Api/api";
+
 const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const SET_USER_PROFILE = "SET-USER-PROFILE";
+const SET_STATUS = "SET-STATUS";
 
 let initialState = {
   posts: [
@@ -47,7 +54,8 @@ let initialState = {
       date: "2 hours ago",
     },
   ],
-  newPost: "",
+  profile: null,
+  status: "",
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -86,9 +94,9 @@ const profileReducer = (state = initialState, action) => {
         date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
       let showHours =
         date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-      let newPost = {
+      let newPostText = {
         id: state.posts.length + 1,
-        message: state.newPost,
+        message: action.newPostText,
         likesCount: 0,
         author: "Wade Wilson",
         date:
@@ -104,25 +112,54 @@ const profileReducer = (state = initialState, action) => {
       };
       return {
         ...state,
-        posts: [newPost, ...state.posts],
-        newPost: ''
+        posts: [newPostText, ...state.posts],
       };
 
-    case UPDATE_NEW_POST_TEXT:
+    case SET_USER_PROFILE:
       return {
         ...state,
-        newPost: action.newText
+        profile: action.profileId,
       };
-
+    case SET_STATUS:
+      return {
+        ...state,
+        status: action.status,
+      };
     default:
       return state;
   }
 };
 
-export const addPostActionCreator = () => ({ type: ADD_POST });
-export const updateNewPostActionCreator = (text) => ({
-  type: UPDATE_NEW_POST_TEXT,
-  newText: text,
+export const addPostActionCreator = (newPostText) => ({
+  type: ADD_POST,
+  newPostText,
 });
+export const setUserProfile = (profileId) => ({
+  type: SET_USER_PROFILE,
+  profileId,
+});
+export const setStatus = (status) => ({
+  type: SET_STATUS,
+  status,
+});
+
+//redux-thunk
+
+export const getUserProfileId = (userId) => async (dispatch) => {
+  let data = await getUserProfile(userId);
+  dispatch(setUserProfile(data));
+};
+
+export const getStatus = (userId) => async (dispatch) => {
+  let data = await getUserStatus(userId);
+  dispatch(setStatus(data));
+};
+
+export const updateStatus = (status) => async (dispatch) => {
+  let data = await updateUserStatus(status);
+  if (data.resultCode === 0) {
+    dispatch(setStatus(status));
+  }
+};
 
 export default profileReducer;

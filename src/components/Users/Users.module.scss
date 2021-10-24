@@ -61,6 +61,11 @@
     padding: 5px 20px;
     border: 2px solid #b8e9ff52;
 
+    &:disabled {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+    }
 }
 
 .followButton:hover {
@@ -80,6 +85,12 @@
     background-color: rgb(20, 255, 20) !important;
     transition-duration: 1s !important;
     transition: 1s;
+
+    &:disabled {
+        border: 1px solid #999999 !important;
+        background-color: #cccccc !important;
+        color: #666666 !important;
+    }
 }
 
 .infoWrapper {

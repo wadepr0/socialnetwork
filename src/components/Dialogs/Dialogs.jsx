@@ -2,21 +2,18 @@ import React from 'react';
 import classes from './Dialogs.module.scss';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import Textarea from './Textarea/Textarea';
+import TextareaComponent from './Textarea/Textarea';
+import { Redirect } from 'react-router-dom';
 
 function Dialogs(props) {
+    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name} avatar={dialog.avatar} key={dialog.id} />)
 
-    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name} avatar={dialog.avatar} key={dialog.id}/>)
+    let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message} key={message.id} />)
 
-    let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message} key={message.id}/>)
-
-    let onMessageChange = (text) => {
-        props.updateNewMessage(text)
+    let addMessage = (values) => {
+        props.addMessage(values.newMessageBody)
     }
 
-    let addMessage = () => {
-        props.addMessage()
-    }
     return (
         <div className={classes.dialogs_wrapper}>
             <div className={classes.dialogs}>
@@ -26,7 +23,7 @@ function Dialogs(props) {
                 <div className={classes.messages}>
                     {messagesElements}
                 </div>
-                <Textarea updateNewMessage={onMessageChange} addMessage={addMessage} newMessage={props.dialogsPage.newMessage} /></div>
+                <TextareaComponent addMessage={addMessage} /></div>
         </div>
     )
 }

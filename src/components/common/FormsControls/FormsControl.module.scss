@@ -1,0 +1,26 @@
+.formControl .error {
+
+    input,
+    textarea {
+        border: 1px red solid;
+    }
+}
+
+.formControl {
+    span {
+        padding-left: 20px;
+        color: red;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+.formSummaryError {
+    font-size: 20px;
+    font-weight: 700;
+    width: 30%;
+    margin: 5px 0;
+    border: 1px red solid;
+    padding: 5px;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+}
